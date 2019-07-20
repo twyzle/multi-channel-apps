@@ -1,0 +1,10 @@
+{
+	"actions": [
+		{
+			"say": "Is there anything else I can help you with ......You can say reserve, hours, review or directions... or ... bye to end this session "
+		},
+		{
+			"listen": true
+		}
+	]
+}

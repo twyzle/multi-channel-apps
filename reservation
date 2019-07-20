@@ -1,0 +1,41 @@
+{
+	"actions": [
+		{
+			"say": "Ok..let's get started on your  reservations. "
+		},
+		{
+			"collect": {
+				"name": "make_reservation",
+				"questions": [
+					{
+						"question": "Let's get started... What's your first name?",
+						"name": "first_name",
+						"type": "Twilio.FIRST_NAME"
+					},
+					{
+						"question": "Thanks....next question... which date would you like?",
+						"name": "reservation_date",
+						"type": "Twilio.DATE"
+					},
+					{
+						"question": "And... what time would you like?",
+						"name": "reservation_time",
+						"type": "Twilio.TIME"
+					},
+					{
+						"question": "Got it...how many people are in your party?",
+						"name": "party_size",
+						"type": "Twilio.NUMBER"
+					},
+					{
+						"question": "Finally... Do you have any special requests?",
+						"name": "special_requests"
+					}
+				],
+				"on_complete": {
+					"redirect": "task://anything-else"
+				}
+			}
+		}
+	]
+}

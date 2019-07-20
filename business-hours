@@ -1,0 +1,10 @@
+{
+	"actions": [
+		{
+			"say": "We are open 11am-9pm Tuesday through Sunday and closed on Monday"
+		},
+		{
+			"redirect": "task://anything-else"
+		}
+	]
+}
