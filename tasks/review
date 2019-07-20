@@ -1,0 +1,26 @@
+{
+	"actions": [
+		{
+			"collect": {
+				"name": "collect_comments",
+				"questions": [
+					{
+						"question": "How often do you dine with us?",
+						"name": "how-often"
+					},
+					{
+						"question": "How would you rate the service you received?",
+						"name": "service"
+					},
+					{
+						"question": "On a scale of one to ten, how did you enjoy your meal?",
+						"name": "meal"
+					}
+				],
+				"on_complete": {
+					"redirect": "task://anything-else"
+				}
+			}
+		}
+	]
+}

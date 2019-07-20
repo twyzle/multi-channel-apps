@@ -1,0 +1,10 @@
+{
+	"actions": [
+		{
+			"say": "Sorry...I didn't understand that...lets start over.  what would you like to do? You can say reserve, hours, review or directions... or.. bye if you would like to end this session"
+		},
+		{
+			"listen": true
+		}
+	]
+}
