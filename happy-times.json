@@ -1,0 +1,207 @@
+{
+  "description": "Happy Times Restaurant Assistant",
+  "states": [
+    {
+      "type": "InitialState",
+      "name": "Trigger",
+      "properties": {
+        "offset": {
+          "x": 70,
+          "y": 90
+        },
+        "flow_url": "https://webhooks.twilio.com/v1/Accounts/ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX/Flows/FW66bcf520347f27ec6b52f2401d70288c"
+      },
+      "transitions": [
+        {
+          "event": "incomingMessage",
+          "conditions": [],
+          "next": "FFb488f639c1ad1700a1acad61401ef937",
+          "uuid": "0871d676-80ce-42b8-8618-7bc845db1058"
+        },
+        {
+          "event": "incomingCall",
+          "conditions": [],
+          "next": "FF562ced3447c4c4d60315ef93d2640ba5",
+          "uuid": "87819e42-f79c-4b10-8745-f06d3b64a9d9"
+        },
+        {
+          "event": "incomingRequest",
+          "conditions": [],
+          "next": null,
+          "uuid": "ec455b71-2b8f-4104-8086-5b3b8e9a938a"
+        }
+      ],
+      "sid": "FF9e6a18f41f586714f5e9ba431d2b7a2f"
+    },
+    {
+      "type": "Autopilot",
+      "name": "autopilot_voice",
+      "properties": {
+        "offset": {
+          "x": 420,
+          "y": 350
+        },
+        "autopilot_assistant_sid": "UAXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+        "model_sid": null,
+        "from": "{{flow.channel.address}}",
+        "body": "{{trigger.message.Body}}",
+        "chat_service": "{{trigger.message.InstanceSid}}",
+        "chat_channel": "{{trigger.message.ChannelSid}}",
+        "chat_attributes": null,
+        "timeout": 3600,
+        "target_task": null
+      },
+      "transitions": [
+        {
+          "event": "sessionEnded",
+          "conditions": [],
+          "next": "FF78cb3112bd24dcdc22b14b44929a8d77",
+          "uuid": "76732973-0b13-4119-9648-8c0cfb833135"
+        },
+        {
+          "event": "failure",
+          "conditions": [],
+          "next": null,
+          "uuid": "02eb98f5-07da-4f01-83d5-7cab0f78c0cc"
+        }
+      ],
+      "sid": "FF562ced3447c4c4d60315ef93d2640ba5"
+    },
+    {
+      "type": "Message",
+      "name": "send_discount",
+      "properties": {
+        "offset": {
+          "x": 40,
+          "y": 1080
+        },
+        "body": "I am sorry your meal was less that satisfactory. We would like to keep you as a happy customer and  invite you to visit us again and enjoy $25 off your next meal.",
+        "from": "{{flow.channel.address}}",
+        "to": "{{contact.channel.address}}",
+        "media_url": null,
+        "service": "{{trigger.message.InstanceSid}}",
+        "channel": "{{trigger.message.ChannelSid}}",
+        "attributes": null
+      },
+      "transitions": [
+        {
+          "event": "sent",
+          "conditions": [],
+          "next": null,
+          "uuid": "a703a363-1576-4efe-be55-7b90d8b061f0"
+        },
+        {
+          "event": "failed",
+          "conditions": [],
+          "next": null,
+          "uuid": "fdad319a-ba9f-434d-bd61-2aee550165ca"
+        }
+      ],
+      "sid": "FF093704c0b03be845f93f823bf1ba966b"
+    },
+    {
+      "type": "Branch",
+      "name": "split_voice_low_rating",
+      "properties": {
+        "offset": {
+          "x": 340,
+          "y": 650
+        },
+        "input": "{{widgets.autopilot_voice.twilio_collected_data_collect_comments_answers_meal_answer}}"
+      },
+      "transitions": [
+        {
+          "event": "noMatch",
+          "conditions": [],
+          "next": null,
+          "uuid": "16172f44-497b-4daa-8bb5-a80f12b68fc1"
+        },
+        {
+          "event": "match",
+          "conditions": [
+            {
+              "friendly_name": "If value matches_any_of 1,2,3,4",
+              "type": "matches_any_of",
+              "arguments": [
+                "{{widgets.autopilot_voice.twilio_collected_data_collect_comments_answers_meal_answer}}"
+              ],
+              "value": "1,2,3,4,one,two,three,four,free"
+            }
+          ],
+          "next": "FF093704c0b03be845f93f823bf1ba966b",
+          "uuid": "1ad4dff6-2309-4bec-a8cc-06d4ad1eb404"
+        }
+      ],
+      "sid": "FF78cb3112bd24dcdc22b14b44929a8d77"
+    },
+    {
+      "type": "Autopilot",
+      "name": "autopilot_sms",
+      "properties": {
+        "offset": {
+          "x": -170,
+          "y": 350
+        },
+        "autopilot_assistant_sid": "UAXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+        "model_sid": null,
+        "from": "{{flow.channel.address}}",
+        "body": "{{trigger.message.Body}}",
+        "chat_service": "{{trigger.message.InstanceSid}}",
+        "chat_channel": "{{trigger.message.ChannelSid}}",
+        "chat_attributes": null,
+        "timeout": 3600,
+        "target_task": null
+      },
+      "transitions": [
+        {
+          "event": "sessionEnded",
+          "conditions": [],
+          "next": "FF42e19ed3ee3493efd0040400573625c7",
+          "uuid": "6d55bb8a-dc51-4d5f-a070-5552f2a9dedd"
+        },
+        {
+          "event": "failure",
+          "conditions": [],
+          "next": null,
+          "uuid": "c725c804-0fe1-46ed-b8ec-808a67a7ab9c"
+        }
+      ],
+      "sid": "FFb488f639c1ad1700a1acad61401ef937"
+    },
+    {
+      "type": "Branch",
+      "name": "split_sms_low_rating",
+      "properties": {
+        "offset": {
+          "x": -230,
+          "y": 650
+        },
+        "input": "{{widgets.autopilot_sms.memory.twilio.collected_data.collect_comments.answers.meal.answer}}"
+      },
+      "transitions": [
+        {
+          "event": "noMatch",
+          "conditions": [],
+          "next": null,
+          "uuid": "c72b55cc-0c48-49e9-90eb-bb86ac95df10"
+        },
+        {
+          "event": "match",
+          "conditions": [
+            {
+              "friendly_name": "If value matches_any_of 1,2,3,4",
+              "type": "matches_any_of",
+              "arguments": [
+                "{{widgets.autopilot_sms.memory.twilio.collected_data.collect_comments.answers.meal.answer}}"
+              ],
+              "value": "1,2,3,4,one,two,three,four,free"
+            }
+          ],
+          "next": "FF093704c0b03be845f93f823bf1ba966b",
+          "uuid": "a6b61763-b7e7-47ea-9d74-fcce27bbec94"
+        }
+      ],
+      "sid": "FF42e19ed3ee3493efd0040400573625c7"
+    }
+  ]
+}
