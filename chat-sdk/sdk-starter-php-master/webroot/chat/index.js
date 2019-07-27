@@ -43,7 +43,7 @@ $(function() {
   // Get an access token for the current user, passing a username (identity)
   // and a device ID - for browser-based apps, we'll always just use the
   // value "browser"
-  $.getJSON('token.php', {
+  $.getJSON('/token.php', {
     device: 'browser'
   }, function(data) {
 
