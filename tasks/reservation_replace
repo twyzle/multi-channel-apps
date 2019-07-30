@@ -1,8 +1,6 @@
 {
 	"actions": [
-		{
-			"say": "Hi you’ve reached Happy Times Pizza. I can help you make a reservation..."
-		},
+	
 		{
 			"collect": {
 				"name": "make_reservation",
@@ -33,7 +31,7 @@
 					}
 				],
 				"on_complete": {
-					"redirect": "task://goodbye"
+					"redirect": "task://anything-else"
 				}
 			}
 		}

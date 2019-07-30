@@ -1,0 +1,30 @@
+AutoPilot Channel Voice Url:
+
+AutoPilot Channel Messaging Url:
+
+AutoPilot Channel Chat Url: 
+
+TWILIO #:  
+
+FOR .ENV FILE
+
+# Required for all uses
+TWILIO_ACCOUNT_SID=ACXXXXXXXXXXXX
+TWILIO_API_KEY=SKXXXXXXXXXX
+TWILIO_API_SECRET=
+
+# Required for Chat
+TWILIO_CHAT_SERVICE_SID=ISXXXXXXXXX
+
+# Required for Notify
+TWILIO_NOTIFICATION_SERVICE_SID=
+
+# Optional for Sync. By default, the app uses the 'default' instance on your account.
+TWILIO_SYNC_SERVICE_SID=
+
+
+TWIML APP SID:  
+
+
+CAPABILITY TOKEN URL:
+

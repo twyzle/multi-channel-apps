@@ -1,10 +1,16 @@
+JSON (add under Program)
+
 {
 	"actions": [
 		{
-			"say": "Hi you’ve reached Happy Time Pizza. We can help you make a reservation, tell you our business hours, tell you where we are located or you can review your last visit. How would you like to continue?"
+			"say": "Hi you’ve reached Happy Time Pizza. I can help you make a reservation, tell you our business hours, tell you where we are located or you can review your last visit. How would you like to continue?"
 		},
 		{
 			"listen": true
 		}
 	]
 }
+
+SAMPLES (add under Train)
+
+happy
