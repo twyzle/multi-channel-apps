@@ -1,3 +1,4 @@
+JSON (add under Program to existing reservation task.  dont create a new task)
 {
 	"actions": [
 	
@@ -26,7 +27,7 @@
 						
 					},
 					{
-						"question": "Finally... Do you have any special requests?",
+						"question": "Last question... Do you have any special requests?",
 						"name": "special_requests"
 					}
 				],
@@ -37,3 +38,13 @@
 		}
 	]
 }
+
+SAMPLES (add under train)
+
+make a reservation	
+reservation
+book reservation	
+make booking
+reservation 
+reserve
+reservations

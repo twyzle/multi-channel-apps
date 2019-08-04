@@ -1,3 +1,5 @@
+JSON (add under Program) 
+
 {
 	"actions": [
 		{
@@ -5,3 +7,8 @@
 		}
 	]
 }
+
+Samples (add under train)
+
+bye
+goodbye

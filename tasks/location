@@ -2,7 +2,7 @@ JSON (add under Program)
 {
 	"actions": [
 		{
-			"say": "We are located in the Food Court  in the Yerba Buena Market in San Franciso"
+			"say": "We are located in the Food Court  in the Yerba Buena Market in San Francisco"
 		},
 		{
 			"redirect": "task://anything-else"
@@ -15,3 +15,4 @@ SAMPLES (add under train)
 where are you located
 where located
 your address
+directions

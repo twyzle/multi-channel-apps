@@ -2,7 +2,9 @@ JSON (add under Program)
 
 {
 	"actions": [
-		{
+			{
+			"say": "Thanks for taking the time to let us know about your last dining experience. Let's get started with our first question..."
+		},{
 			"collect": {
 				"name": "collect_comments",
 				"questions": [
@@ -15,7 +17,7 @@ JSON (add under Program)
 						"name": "service"
 					},
 					{
-						"question": "On a scale of one to ten, how did you enjoy your meal?",
+						"question": "On a scale of one to five, how did you enjoy your meal?",
 						"name": "meal"
 					}
 				],

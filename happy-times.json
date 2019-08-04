@@ -75,7 +75,7 @@
           "x": 40,
           "y": 1080
         },
-        "body": "I am sorry your meal was less that satisfactory. We would like to keep you as a happy customer and  invite you to visit us again and enjoy $25 off your next meal.",
+        "body": "I am sorry your meal was less than satisfactory. We would like to keep you as a happy customer and  invite you to visit us again and enjoy your next meal on us.",
         "from": "{{flow.channel.address}}",
         "to": "{{contact.channel.address}}",
         "media_url": null,
