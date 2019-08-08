@@ -1,4 +1,6 @@
 # Building Transformative Multi-Channel Apps with Twilio
+
+
 In this workshop we are going to build a multi-channal app for Happy Times Pizza.  Our app is going to allow a user to 
 
 1. Make a reservation
@@ -14,11 +16,11 @@ This repo contains all of the resources you will need to build this app. The ste
 
 1. Log into your Twilio Console and go to Autopilot Console
 
-2. Create new assistant named Happy Times Pizza
+2. Build a new bot named Happy Times Pizza - choosing Start from Scratch
 
-3. Delete hello_world task. 
+3. Delete all tasks created by AutoPilot by default - Let's start with an empty canvas. 
 
-    From tasks list page find 'hello_world' task and select Program option. On following page you will be able to delete task by clicking trash icon
+    From tasks list page find 'fallback','collect_fallback','goodbye', 'greeting','goodbye' tasks   bye selecting Program option next to each task. On following page you will be able to delete task by clicking trash icon. 
 
 4. Create reservation task.
 
@@ -59,9 +61,9 @@ We completed our abbreviated app and tested it successfully.  Now lets add all t
     
     Go to the Tasks folder and find the error file.  Open and paste JSON content on Program page. 
 
-5. Create intro task. 
+5. Create greeting task. 
 
-    Go to the Tasks folder and find the intro file.  Open and paste JSON content on Program page. Navigate to Train page and add sample from  file
+    Go to the Tasks folder and find the greeting file.  Open and paste JSON content on Program page. Navigate to Train page and add sample from  file
 
 6. Create location task. 
 
