@@ -24,7 +24,7 @@ GEM
     mustermann (1.0.3)
     nokogiri (1.8.4)
       mini_portile2 (~> 2.3.0)
-    rack (2.0.5)
+    rack (2.2.3)
     rack-contrib (2.0.1)
       rack (~> 2.0)
     rack-protection (2.0.4)
